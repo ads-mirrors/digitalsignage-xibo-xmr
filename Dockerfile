@@ -4,7 +4,7 @@ RUN composer install --no-interaction --no-dev --ignore-platform-reqs --optimize
 
 # Build the PHAR file
 RUN echo 'phar.readonly = Off' > /usr/local/etc/php/php.ini;
-RUN curl -LSs https://github.com/box-project/box/releases/download/4.2.0/box.phar -o box.phar; php box.phar compile; rm box.phar
+RUN curl -LSs https://github.com/box-project/box/releases/download/4.6.10/box.phar -o box.phar; php box.phar compile; rm box.phar
 
 FROM php:8.2-cli
 LABEL org.opencontainers.image.authors="Xibo Signage Ltd <info@xibosignage.com>"
